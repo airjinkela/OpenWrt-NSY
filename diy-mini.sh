@@ -149,8 +149,9 @@ cp -f $GITHUB_WORKSPACE/configfiles/mt7916_eeprom.bin package/base-files/files/l
 
 git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
 
-echo >> feeds.conf.default
-echo 'src-git modem https://github.com/FUjr/modem_feeds.git;main' >> feeds.conf.default
+git clone --depth=1 https://github.com/FUjr/modem_feeds package/modem_feeds
+
+git clone --depth=1 https://gitee.com/airjinkela/quectel_cm_5-g.git package/quectel_cm_5g
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
